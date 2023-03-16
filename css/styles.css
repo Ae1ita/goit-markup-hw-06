@@ -8,6 +8,8 @@
   --button-color: #4d5ae5;
   --button-background-color: #f4f4fd;
   --button-border-color: #e7e9fc;
+
+  --transition-dur-and-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -95,18 +97,24 @@ p {
   font-size: 16px;
   line-height: 1.5;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-dur-and-func);
+}
+.site-nav.link.current {
+  position: relative;
+  padding-bottom: 24px;
 }
 .site-nav.link.current::after {
+  position: absolute;
+  top: 100%;
+  content: "";
   display: block;
-  width: 48px;
+  width: 100%;
   height: 4px;
   background-color: var(--accent-color);
   border-radius: 2px;
   margin: 0 auto;
-
-  content: "";
 }
+
 .site-nav.link:hover,
 .site-nav.link:focus {
   color: var(--accent-color);
@@ -131,7 +139,7 @@ p {
   font-size: 16px;
   line-height: 1.5px;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-dur-and-func);
 }
 .mailto.link:hover,
 .mailto.link:focus {
@@ -144,7 +152,7 @@ p {
   line-height: 1.5px;
   text-decoration: none;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-dur-and-func);
 }
 .tel:hover,
 .tel:focus {
@@ -204,7 +212,7 @@ p {
   border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-dur-and-func);
 }
 
 .button.primary:hover,
@@ -216,9 +224,8 @@ p {
   background-color: var(--button-background-color);
   padding: 12px 24px;
 
-  transition-property: color, background-color, box-shadow;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color, background-color, box-shadow,
+    var(--transition-dur-and-func);
 }
 
 .button.secondary:hover,
@@ -351,7 +358,7 @@ p {
   margin-top: 8px;
   background: var(--button-color);
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-dur-and-func);
 }
 
 .team-social.link:is(:hover, :focus) {
@@ -395,13 +402,14 @@ p {
 .examples-item {
   flex-basis: calc((100% - 48px) / 3);
 
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--transition-dur-and-func);
 }
 .examples-item:hover,
 .examples-item :focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
+
 .projects-card {
   display: block;
   padding-top: 32px;
@@ -411,6 +419,33 @@ p {
   border: 1px solid var(--button-border-color);
   border-top: 1px solid transparent;
 }
+.project-list-wrapper-img {
+  position: relative;
+  overflow: hidden;
+}
+.project-list-wrapper.link:hover .owerlay,
+.project-list-wrapper.link:focus .owerlay {
+  transform: translateY(0);
+}
+
+.owerlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--button-background-color);
+  background-color: var(--button-color);
+  padding-top: 40px;
+  padding-left: 32px;
+  padding-right: 32px;
+
+  transform: translateY(100%);
+  transition: transform var(--transition-dur-and-func);
+}
+
 /* Customers */
 
 .customers-contact {
@@ -448,9 +483,7 @@ p {
   color: #8e8f99;
   border: 1px solid #8e8f99;
 
-  transition-property: color, border;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color, border, var(--transition-dur-and-func);
 }
 
 .customers.link:is(:hover, :focus) {
@@ -526,7 +559,7 @@ p {
   background: rgba(255, 255, 255, 0.1);
   color: var(--button-background-color);
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-dur-and-func);
 }
 
 .media-social.link:is(:hover, :focus) {
@@ -534,4 +567,32 @@ p {
 }
 .media-social-icon {
   fill: currentColor;
+}
+/*Modal window*/
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba(46, 47, 66, 0.4);
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 408px;
+  height: 576px;
+  background: #fcfcfc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.modal-close-button {
+}
+
+.modal-icon {
 }
