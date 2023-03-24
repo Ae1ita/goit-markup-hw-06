@@ -417,7 +417,7 @@
           </p>
         </div>
         <div class="footer-social">
-          <h3 class="social-media">Social media</h3>
+          <h3 class="footer-header">Social media</h3>
           <ul class="social-media list">
             <li class="social-media-item">
               <a href="" class="media-social link">
@@ -449,6 +449,24 @@
             </li>
           </ul>
         </div>
+        <div role="group" class="subscribe">
+          <h3 class="footer-header">Subscribe</h3>
+          <form class="subscribe-from">
+            <input
+              type="email"
+              name="mail"
+              id="mail"
+              placeholder="E-mail"
+              autofocus
+            />
+            <button type="submit" class="subscribe-button button">
+              Subscribe
+              <svg class="icon-send" width="24">
+                <use href="./images/symbol-defs.svg#icon-icon-send"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </footer>
     <!--Modal bg-->
@@ -459,6 +477,69 @@
             <use href="./images/symbol-defs.svg#icon-close-modal"></use>
           </svg>
         </button>
+        <h3 class="contacts-call-back">
+          Leave your contacts and we will call you back
+        </h3>
+        <form class="call-back-form">
+          <div class="form-field">
+            <label for="name" class="call-back-text">Name</label>
+            <input
+              type="text"
+              class="form-input"
+              name="name"
+              id="name"
+              autofocus
+            />
+            <svg class="call-back-form-icon person" width="18px">
+              <use href="./images/symbol-defs.svg#icon-person"></use>
+            </svg>
+          </div>
+          <div class="form-field">
+            <label for="tel" class="call-back-text second">Phone</label>
+            <input
+              type="tel"
+              class="form-input"
+              name="tel"
+              id="tel"
+              autofocus
+              pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
+            />
+            <svg class="call-back-form-icon" width="18px">
+              <use href="./images/symbol-defs.svg#icon-phone"></use>
+            </svg>
+          </div>
+          <div class="form-field">
+            <label for="mail" class="call-back-text second">Email</label>
+            <input
+              type="email"
+              class="form-input"
+              name="mail"
+              id="mail"
+              autofocus
+            />
+            <svg class="call-back-form-icon" width="18px">
+              <use href="./images/symbol-defs.svg#icon-email"></use>
+            </svg>
+          </div>
+          <div class="form-field">
+            <label for="comment" class="call-back-text second">Comment</label>
+            <textarea
+              name="comment"
+              class="form-input comment"
+              id="comment"
+              rows="6"
+              placeholder="Text input"
+            ></textarea>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" name="policy" id="policy" />
+            <label for="policy" class="call-back-text third"
+              >I accept the terms and conditions of the
+              <a href="" class="privacy link">Privacy Policy</a></label
+            >
+          </div>
+          <button type="submit" class="button primary send">Send</button>
+        </form>
       </div>
     </div>
     <!-- Javascript -->
