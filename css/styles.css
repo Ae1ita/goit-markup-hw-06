@@ -572,9 +572,27 @@ p {
   width: 453px;
   height: 80px;
 }
-.subscribe-from {
+.subscribe-form {
   display: flex;
 }
+
+.footer-form-input {
+  width: 264px;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.6);
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: transparent;
+  outline: transparent;
+}
+
 .icon-send {
   width: 24px;
   height: 24px;
@@ -673,19 +691,19 @@ p {
   letter-spacing: 0.01em;
   padding-top: 8px;
 }
-.call-back-text.third {
-  color: #757575;
-}
+
 .call-back-form-icon {
   width: 18px;
   height: 24px;
   position: absolute;
   left: 16px;
   top: 34px;
+  transition: fill var(--transition-dur-and-func);
 }
 .call-back-form-icon.person {
   height: 18px;
   top: 26px;
+  transition: fill var(--transition-dur-and-func);
 }
 
 .contacts-call-back {
@@ -704,18 +722,22 @@ p {
   flex-direction: column;
 }
 .form-input {
-  font-size: 12px;
-  line-height: 1.17;
+  font-size: 18px;
+  line-height: 1.25;
   letter-spacing: 0.04em;
   padding-left: 34px;
   height: 40px;
 
-  color: rgba(117, 117, 117, 0.5);
+  color: #000;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   outline: transparent;
+  transition: border-color var(--transition-dur-and-func);
 }
 .form-input.comment {
+  font-size: 12px;
+  line-height: 1.17;
+  color: rgba(117, 117, 117, 0.5);
   height: 120px;
   padding-top: 8px;
   padding-left: 16px;
@@ -726,17 +748,47 @@ p {
 .form-input:focus + .call-back-form-icon {
   fill: var(--button-color);
 }
+
 .checkbox {
   margin-top: 16px;
 }
+.form-label-checkbox {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #757575;
+}
+.checkbox-form {
+  display: flex;
+  width: 16px;
+  height: 16px;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  margin-right: 8px;
 
+  border: 1.25px solid var(--item-text-color);
+  border-radius: 2px;
+  transition: background-color var(--transition-dur-and-func);
+}
+.checkbox-icon {
+  fill: var(--button-background-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.checkbox-input:checked + .form-label-checkbox span {
+  background-color: var(--accent-color);
+  border: 1.25px solid var(--accent-color);
+  border-radius: 2px;
+}
 .privacy {
   line-height: 1.33;
   text-decoration-line: underline;
   color: var(--button-color);
 }
 .button.send {
-  display: flex;
+  display: block;
   width: 169px;
   justify-content: center;
   margin-top: 24px;
