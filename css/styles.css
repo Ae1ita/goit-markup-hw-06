@@ -637,6 +637,11 @@ p {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 72px;
+  padding-bottom: 24px;
 }
 
 .modal-close-button {
@@ -654,7 +659,7 @@ p {
   border-radius: 50%;
   padding: 8px;
   color: #000;
-
+  cursor: pointer;
   transition: background-color var(--transition-dur-and-func);
 }
 
@@ -675,21 +680,16 @@ p {
   visibility: hidden;
   pointer-events: none;
 }
-.call-back-form {
-  padding-bottom: 16px;
-  padding-left: 24px;
-  padding-right: 24px;
-}
+
 .call-back-text {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: #8e8f99;
-  padding-bottom: 4px;
+  margin-bottom: 4px;
 }
 .call-back-text.second {
   letter-spacing: 0.01em;
-  padding-top: 8px;
 }
 
 .call-back-form-icon {
@@ -697,12 +697,11 @@ p {
   height: 24px;
   position: absolute;
   left: 16px;
-  top: 34px;
+  top: 26px;
   transition: fill var(--transition-dur-and-func);
 }
 .call-back-form-icon.person {
   height: 18px;
-  top: 26px;
   transition: fill var(--transition-dur-and-func);
 }
 
@@ -710,24 +709,24 @@ p {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
+  letter-spacing: 0.02em;
 
   color: var(--item-text-color);
-  padding-top: 72px;
-  padding-bottom: 16px;
-  text-align: center;
+  margin-bottom: 16px;
 }
+
 .form-field {
   position: relative;
   display: flex;
   flex-direction: column;
+  margin-bottom: 8px;
 }
 .form-input {
   font-size: 18px;
   line-height: 1.25;
   letter-spacing: 0.04em;
-  padding-left: 34px;
   height: 40px;
-
+  padding-left: 34px;
   color: #000;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
@@ -738,9 +737,13 @@ p {
   font-size: 12px;
   line-height: 1.17;
   color: rgba(117, 117, 117, 0.5);
+
   height: 120px;
   padding-top: 8px;
   padding-left: 16px;
+}
+.form-field.comment {
+  margin-bottom: 16px;
 }
 .form-input:focus {
   border-color: var(--button-color);
@@ -750,7 +753,7 @@ p {
 }
 
 .checkbox {
-  margin-top: 16px;
+  margin-bottom: 24px;
 }
 .form-label-checkbox {
   display: flex;
@@ -775,7 +778,6 @@ p {
 }
 .checkbox-icon {
   fill: var(--button-background-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .checkbox-input:checked + .form-label-checkbox span {
   background-color: var(--accent-color);
@@ -790,9 +792,6 @@ p {
 .button.send {
   display: block;
   width: 169px;
-  justify-content: center;
-  margin-top: 24px;
-  margin-bottom: 24px;
   margin-left: auto;
   margin-right: auto;
 }
